@@ -34,39 +34,39 @@ selectMapFile.addEventListener("change",function(evt){
 //スタンプの設置
 //スタンプ画像の設定
 const charaHome = new Image();
-charaHome.src = "home.png"
+charaHome.src = "image/home.png"
 const charaSchool = new Image();
-charaSchool.src = "school.png"
+charaSchool.src = "image/school.png"
 const charaEvacuation = new Image();
-charaEvacuation.src = "evacuation.png"
+charaEvacuation.src = "image/evacuation.png"
 const charaCamera1 = new Image();
-charaCamera1.src = "camera1.png"
+charaCamera1.src = "image/camera1.png"
 const charaCamera2 = new Image();
-charaCamera2.src = "camera2.png"
+charaCamera2.src = "image/camera2.png"
 const charaCamera3 = new Image();
-charaCamera3.src = "camera3.png"
+charaCamera3.src = "image/camera3.png"
 const charaCamera4 = new Image();
-charaCamera4.src = "camera4.png"
+charaCamera4.src = "image/camera4.png"
 const charaCamera5 = new Image();
-charaCamera5.src = "camera5.png"
+charaCamera5.src = "image/camera5.png"
 const charaNote1 = new Image();
-charaNote1.src = "note1.png"
+charaNote1.src = "image/note1.png"
 const charaNote2 = new Image();
-charaNote2.src = "note2.png"
+charaNote2.src = "image/note2.png"
 const charaNote3 = new Image();
-charaNote3.src = "note3.png"
+charaNote3.src = "image/note3.png"
 const charaNote4 = new Image();
-charaNote4.src = "note4.png"
+charaNote4.src = "image/note4.png"
 const charaNote5 = new Image();
-charaNote5.src = "note5.png"
+charaNote5.src = "image/note5.png"
 const charaNote6 = new Image();
-charaNote6.src = "note6.png"
+charaNote6.src = "image/note6.png"
 const charaNote7 = new Image();
-charaNote7.src = "note7.png"
+charaNote7.src = "image/note7.png"
 const charaNote8 = new Image();
-charaNote8.src = "note8.png"　　　　　　　　　　　　
+charaNote8.src = "image/note8.png"　　　　　　　　　　　　
 const charaNote9 = new Image();
-charaNote9.src = "note9.png"
+charaNote9.src = "image/note9.png"
 
 
 //スタンプを選択
