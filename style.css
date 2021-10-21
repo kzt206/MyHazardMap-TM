@@ -3,10 +3,33 @@
     --display-width:1300px;
 }
 .title{
+    display:flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    height:50px;
+    height:30px;
     width:calc(var(--display-width));
     border: dashed 1px red;
+}
+
+#title-label{  
+    /* background-color:blue; */
+}
+
+#download-button{
+    margin-left: 300px;
+    text-align: center;
+    background-color: #00b7ff;
+    border-bottom: 5px solid #024f97;
+    border-radius: 10px;
+    width:200px;
+
+}
+#download-button:hover{
+    margin-top: 3px;
+    color: #000;
+    background: #00b7ff;
+    border-bottom: 2px solid #024f97;
 }
 
 .workspace{
@@ -20,12 +43,77 @@
     border:dashed 1px blue;
 }
 #tool-box-title{
+    color:#000;
     text-align: center;
+
 }
 
+#tool-map{
+    height:40px;
+}
+
+#map-load-button{
+    text-align: center;
+    background-color: #fff100;
+    border-bottom: 5px solid #ccc100;
+    border-radius: 10px;
+
+}
+#map-load-button:hover{
+    /* margin-top: 3px; */
+    color: #000;
+    background: hsl(73, 100%, 50%);
+    border-bottom: 5px solid #ccc100;
+}
+
+input[type='file']{
+    display:none;
+}
+
+.tool-box-row{
+    /* margin-top:5px; */
+    display: flex;
+    height:10%;
+}
+
+.tool,.toolColor,.toolThickness{
+    margin-top:1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border:solid 4px white;
+    width:50%;
+}
+
+.tool:hover{
+    border:solid 4px yellow;
+}
+
+.toolColor:hover{
+    border:solid 4px gray;
+
+}
+
+.toolThickness:hover{
+    border:solid 4px purple;
+
+}
+.activeTool{
+    border:solid 4px red;
+    /* transform:scale(1.5); */
+}
+.activeColor{
+    border:solid 4px pink;
+    /* transform:scale(1.5); */
+}
+.activeThickness{
+    border:solid 4px orange;
+    /* transform:scale(1.5); */
+}
 .map{
     width: 750px;
-    height: 500px;
+    height: 600px;
     position: relative;
     border: dashed 1px blue;
 }
