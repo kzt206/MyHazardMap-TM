@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- cdnjs -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+        <link rel="stylesheet" href="style.css">
+        <title>My Hazard Map Maker</title>
+    </head>
+
+    <body>
+        <!-- 画面のタイトルの設定 -->
+        <div class="title">
+            マイ　ハザード　マップ　を作ろう！
+            ダウンロードボタン
+        </div>
+
+        <!-- 作業するスペース -->
+        <div class="workspace">
+            <!-- 作業道具を入れるスペース -->
+            <div class="tool-box">
+                <div id="tool-box-title">道具箱</div>
+
+            </div>
+            <!-- マップを表示したり記入したりするスペース -->
+            <div class="map">
+                <div class="canvasSpace">
+                    <canvas id="canvasMap"   style="width:750px; height:500px"></canvas> 
+                    <canvas id="canvasPaint"  style="width:750px; height:500px"></canvas>
+                    <canvas id="canvasContact"></canvas> <!-- 非表示 -->
+                </div>
+            </div>
+
+            <!-- 吹き出しの注釈を記入するスペース -->
+            <div class="fukidashi">
+                fukidashi
+            </div>
+
+            <!-- カメラ画像を設定したり表示するスペース -->
+            <div class="photos">
+                photos
+            </div>
+        </div>
+
+        <!-- コメントを書くスペース -->
+        <div class="comment">
+            comment
+        </div>
+
+
+        <!-- javascriptファイルの読み込み -->
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+/* Acer 1366x768 */
+:root{
+    --display-width:1300px;
+}
+.title{
+    text-align: center;
+    height:50px;
+    width:calc(var(--display-width));
+    border: dashed 1px red;
+}
+
+.workspace{
+    display: flex;
+    width:var(--display-width);
+    border: dashed 1px red;
+}
+
+.tool-box{
+    width:150px;
+    border:dashed 1px blue;
+}
+#tool-box-title{
+    text-align: center;
+}
+
+.map{
+    width: 750px;
+    height: 500px;
+    position: relative;
+    border: dashed 1px blue;
+}
+
+#canvasMap{
+    position:absolute;
+    /* top:100px; */
+    /* left:200px; */
+    /* margin-left: 200; */
+    /* border: solid 3px blue; */
+}
+
+#canvasPaint{
+    position:absolute;
+    /* padding:100; */
+    /* margin-left: 500; */
+    /* border: solid 2px green; */
+}
+
+#canvasContact{
+    display: none !important; /* 非表示設定 */
+}
+
+.fukidashi{
+    width:200px;
+    border: dashed 1px blue;
+}
+
+.photos{
+    width:200px;
+    border: dashed 1px blue;
+}
+
+.comment{
+    width:var(--display-width);
+    border: dashed 1px red;
+}
