@@ -142,12 +142,38 @@ input[type='file']{
     border: dashed 1px blue;
 }
 
+.fukidashi-row{
+    height:25%;
+}
+
+.fukidashi-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border:dashed 1px blue;
+}
+
 .photos{
     width:200px;
     border: dashed 1px blue;
+}
+
+.photos-row{
+    height:25%;
+}
+
+.photos-title{
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border:dashed 1px blue;
 }
 
 .comment{
     width:var(--display-width);
     border: dashed 1px red;
 }
+

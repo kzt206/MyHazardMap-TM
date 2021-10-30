@@ -23,8 +23,23 @@ canvasPaint.height = canvasMap.height;
 canvasPaint.style.width = original_width/canvasFactor + "px";
 canvasPaint.style.height = original_height/canvasFactor + "px";
 
+//photo キャンバスの設定
+canvasPhotoListName = ["canvasPhoto1","canvasPhoto2","canvasPhoto3","canvasPhoto4"];
+canvasFactor = 3;
+photo_original_width = 200*canvasFactor;  //style="width:750px; height:500px"
+photo_original_height = 150*canvasFactor; 
+canvasPhotoList = []
+ctxPhotoList = []
+canvasPhotoListName.forEach(function(value,index){
+    canvasPhotoList.push(document.getElementById(value));
+    ctxPhotoList.push(canvasPhotoList[index].getContext("2d"));
+    canvasPhotoList[index].width = photo_original_width;
+    canvasPhotoList[index].height = photo_original_height;
+    canvasPhotoList[index].style.width = photo_original_width/canvasFactor + "px";
+    canvasPhotoList[index].style.height = photo_original_height/canvasFactor + "px";
+});
 
-//マップ画像の読み込み
+//マップ画像の読み込みイベントの設定
 const loadMapFile = document.getElementById("loadMapFile");
 loadMapFile.addEventListener("change",function(evt){
     console.log("file selector");
@@ -43,6 +58,29 @@ loadMapFile.addEventListener("change",function(evt){
     }
 
 },false);
+
+//写真画像の読み込みイベントの設定
+loadPhotoListName = ["selectPhoto1","selectPhoto2","selectPhoto3","selectPhoto4"];
+loadPhotoFileList = [];
+loadPhotoListName.forEach(function(value,index){
+    loadPhotoFileList.push(document.getElementById(value));
+    loadPhotoFileList[index].addEventListener("change",function(event){
+        console.log("photo load event" + value + index);
+        let file = event.target.files;
+        let reader = new FileReader();
+        reader.readAsDataURL(file[0]);
+        console.log(file[0]);
+        reader.onload = function(){
+        let dataURL = reader.result;
+        let img = new Image();
+        img.src = dataURL;
+        img.onload = function(){
+            ctxPhotoList[index].drawImage(img,0,0,canvasPhotoList[index].width,canvasPhotoList[index].height);
+        }
+        // ctx02.fillRect(50,90,30,20);
+    },false});
+});
+
 
 //スタンプの設置
 //スタンプ画像の設定
