@@ -11,7 +11,7 @@ const ctxPaint = canvasPaint.getContext("2d");
 // canvasMap.height = 1000;
 
 canvasFactor = 3;
-original_width = 750*canvasFactor;  //style="width:750px; height:500px"
+original_width = 740*canvasFactor;  //style="width:750px; height:500px"
 original_height = 500*canvasFactor; 
 
 canvasMap.width = original_width;
