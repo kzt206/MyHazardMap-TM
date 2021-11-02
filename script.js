@@ -27,7 +27,7 @@ canvasPaint.style.height = original_height/canvasFactor + "px";
 canvasPhotoListName = ["canvasPhoto1","canvasPhoto2","canvasPhoto3","canvasPhoto4"];
 canvasFactor = 3;
 photo_original_width = 200*canvasFactor;  //style="width:750px; height:500px"
-photo_original_height = 150*canvasFactor; 
+photo_original_height = 130*canvasFactor; 
 canvasPhotoList = []
 ctxPhotoList = []
 canvasPhotoListName.forEach(function(value,index){

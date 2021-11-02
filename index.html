@@ -95,6 +95,17 @@
                         <a id="thinButton" class="toolButton">細</a>
                      </div>
                 </div>
+                <!-- クリアボタン作成 -->
+                <div class="tool-box-row">
+                    <!-- 消しゴムボタン作成 -->
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="eraserButton" class="iconButton"><img src="image/eraser.png" ></a> 
+                    </div>
+                    <!-- 全消しボタン作成 -->
+                    <div class="tool">
+                        <a id="alleraseButton" class="iconButton"><img src="image/all_erase.png"></a> 
+                    </div>
+                </div>
             </div>
             <!-- マップを表示したり記入したりするスペース -->
             <div class="map">
@@ -114,7 +125,7 @@
                         <img src="image/note1.png">
                     </div>
                     <div class="fukidashi-comment">
-                        comment
+                        <textarea class="textFukidashi" name="" id="fukiashi1"></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
@@ -122,7 +133,7 @@
                         <img src="image/note2.png">
                     </div>
                     <div class="fukidashi-comment">
-                        comment
+                        <textarea class="textFukidashi" name="" id="fukidashi2"></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
@@ -130,7 +141,7 @@
                         <img src="image/note3.png">
                     </div>
                     <div class="fukidashi-comment">
-                        comment
+                        <textarea class="textFukidashi" name="" id="fukidashi3" ></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
@@ -138,7 +149,7 @@
                         <img src="image/note4.png">
                     </div>
                     <div class="fukidashi-comment">
-                        comment
+                        <textarea class="textFukidashi" name="" id="fukidashi4"></textarea>
                     </div>
                 </div>
             </div>
@@ -190,7 +201,19 @@
 
         <!-- コメントを書くスペース -->
         <div class="comment">
-            comment
+            <div class="comment-col">
+                <div class="comment-title" id="comment-title1">
+                    <p>避難路を考えた理由</p>
+                </div>
+                <textarea class="textComment" name="" id="comment1"></textarea>
+            </div>
+            <div class="comment-col">
+                <div class="comment-title" id="comment-title2">
+                    <p>自分の家の周りの様子</p>
+                </div>
+                <textarea class="textComment" name="" id="comment2"></textarea>
+            </div>
+            
         </div>
 
 
