@@ -150,10 +150,10 @@ const note3Button = document.getElementById("note3Button");
 note3Button.addEventListener("click",()=>{
     penStatus = "note3";
 })
-const freeButton = document.getElementById("freeButton");
-freeButton.addEventListener("click",()=>{
-    penStatus = "none";
-})
+// const freeButton = document.getElementById("freeButton");
+// freeButton.addEventListener("click",()=>{
+//     penStatus = "none";
+// })
 
 
 
