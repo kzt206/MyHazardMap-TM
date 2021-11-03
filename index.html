@@ -76,8 +76,19 @@
                         <a id="note3Button" class="toolButton" ><img src="image/note3.png"></a>
                      </div>
                      <div class="tool" onclick="selectButton(this)">
-                        <a id="freeButton" class="toolButton"><img src="image/free.png"></a>
+                        <a id="note4Button" class="toolButton"><img src="image/note4.png"></a>
                      </div>
+                </div>
+                <!-- クリアボタン作成 -->
+                <div class="tool-box-row">
+                    <!-- 消しゴムボタン作成 -->
+                    <div class="tool" onclick="selectButton(this)">
+                        <a id="eraserButton" class="iconButton"><img src="image/eraser.png" ></a> 
+                    </div>
+                    <!-- 全消しボタン作成 -->
+                    <div class="tool">
+                        <a id="alleraseButton" class="iconButton"><img src="image/all_erase.png"></a> 
+                    </div>
                 </div>
                 <div class="tool-box-row">
                     <div class="toolColor activeColor" data-color="blue" onclick="selectColor(this)">
@@ -95,17 +106,7 @@
                         <a id="thinButton" class="toolButton">細</a>
                      </div>
                 </div>
-                <!-- クリアボタン作成 -->
-                <div class="tool-box-row">
-                    <!-- 消しゴムボタン作成 -->
-                    <div class="tool" onclick="selectButton(this)">
-                        <a id="eraserButton" class="iconButton"><img src="image/eraser.png" ></a> 
-                    </div>
-                    <!-- 全消しボタン作成 -->
-                    <div class="tool">
-                        <a id="alleraseButton" class="iconButton"><img src="image/all_erase.png"></a> 
-                    </div>
-                </div>
+                
             </div>
             <!-- マップを表示したり記入したりするスペース -->
             <div class="map">
