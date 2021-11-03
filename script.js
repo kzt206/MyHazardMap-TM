@@ -150,6 +150,7 @@ const note3Button = document.getElementById("note3Button");
 note3Button.addEventListener("click",()=>{
     penStatus = "note3";
 })
+// 選択解除ボタン
 // const freeButton = document.getElementById("freeButton");
 // freeButton.addEventListener("click",()=>{
 //     penStatus = "none";
