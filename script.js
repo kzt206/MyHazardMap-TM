@@ -13,8 +13,8 @@ const ctxPaint = canvasPaint.getContext("2d");
 //キャンバスサイズの設定と拡大率
 canvasFactor = 3;
 //画面上の大きさ×拡大率
-original_width = 740*canvasFactor;  //style="width:750px; height:500px"
-original_height = 500*canvasFactor; 
+original_width = 950*canvasFactor;  //style="width:750px; height:500px"
+original_height = 700*canvasFactor; 
 
 canvasMap.width = original_width;
 canvasMap.height = original_height;
