@@ -178,12 +178,14 @@ const eraserButton = document.getElementById("eraserButton");
 eraserButton.addEventListener("click",()=>{
     penStatus = "eraser";
 })
-//全消去ボタンの設定
-const allearseButon = document.getElementById("alleraseButton");
-alleraseButton.addEventListener("click",()=>{
-  console.log("All Erase is clicked");
-  ctxPaint.clearRect(0,0,canvasPaint.width,canvasPaint.height);
-})
+// //全消去ボタンの設定
+function confirmFunction(){
+    let rt = confirm("本当にすべて消しますか？");
+    if(rt == true){
+        console.log("all easing");
+        ctxPaint.clearRect(0,0,canvasPaint.width,canvasPaint.height);
+    }
+}
 
 // 選択解除ボタン
 // const freeButton = document.getElementById("freeButton");
@@ -337,7 +339,7 @@ canvasPaint.addEventListener("mousemove",(event)=>{
 
 //線を描く関数
 function draw(x2,y2){
-    ereseW = 50; //消しゴムの大きさ
+    eraseW = 50; //消しゴムの大きさ
     eraseH = 50;
     if(isDrag && penStatus == "pencil"){
         ctxPaint.beginPath();
