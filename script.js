@@ -174,6 +174,17 @@ const note4Button = document.getElementById("note4Button");
 note3Button.addEventListener("click",()=>{
     penStatus = "note4";
 })
+const eraserButton = document.getElementById("eraserButton");
+eraserButton.addEventListener("click",()=>{
+    penStatus = "eraser";
+})
+//全消去ボタンの設定
+const allearseButon = document.getElementById("alleraseButton");
+alleraseButton.addEventListener("click",()=>{
+  console.log("All Erase is clicked");
+  ctxPaint.clearRect(0,0,canvasPaint.width,canvasPaint.height);
+})
+
 // 選択解除ボタン
 // const freeButton = document.getElementById("freeButton");
 // freeButton.addEventListener("click",()=>{
@@ -236,6 +247,9 @@ this.canvasPaint.addEventListener("mousedown",(e) => {
     
     //penStatusの状態に応じて挙動変更(アイコンの設置)
     switch(penStatus) {
+        case "pencil":
+            isDrag = true
+            break;
         case "home":
             ctxPaint.drawImage(charaHome,x,y,dw,dh); //drawImage(image, dx, dy, dw, dh)
             break;
@@ -269,6 +283,10 @@ this.canvasPaint.addEventListener("mousedown",(e) => {
         case "note4":
             ctxPaint.drawImage(charaNote4,x,y,dw,dh);
             break;
+        case "eraser":
+            isDrag = true;
+            // ctxPaint.clearRect(x,y,dw/2,dh/2);
+            break;
         default:
             penStatus = "pencil"
     }
@@ -300,20 +318,6 @@ penthinButton.addEventListener("click",()=>{
     penSize = 3 ;  //線の太さを変更
     console.log("penSize = " + penSize);
 })
-// //消しゴムボタンの設定
-// const eraserButton = document.getElementById("eraserButton");
-// eraserButton.addEventListener("click",() => {
-//     console.log("Eraser is clicked");
-//     penStatus = "eraser";
-// })
-// //全消去ボタンの設定
-// const allearseButon = document.getElementById("alleraseButton");
-// alleraseButton.addEventListener("click",()=>{
-//   console.log("All Erase is clicked");
-//   ctxPaint.clearRect(0,0,canvasPaint.width,canvasPaint.height);
-// })
-
-
 
 
 //線を描く
@@ -321,51 +325,7 @@ penthinButton.addEventListener("click",()=>{
 let isDrag = false;
 ctxPaint.fillStyle = "blue";
 ctxPaint.strokeStyle = ctxPaint.fillStyle;
-//線の太さの初期値
-// ctxPaint.lineWidth = 2 ;
 
-//canvasをクリックしたときのイベント設定
-this.canvasPaint.addEventListener("mousedown",(e) => {
-    // let x = e.offsetX-25;
-    // let y = e.offsetY-25;
-    let x = e.offsetX * canvasFactor ;
-    let y = e.offsetY * canvasFactor ;
-
-    console.log("offsetX:",e.offsetX,"offsetY:",e.offsetY);
-    console.log("x:",x," y:",y);
-
-    //penStatusの状態に応じて挙動変更
-    console.log("Penstatus;",penStatus);
-    if(penStatus == "pencil"){
-        isDrag = true;
-    }
-    else if(penStatus == "nameSticker") {
-        ctxPaint.drawImage(charaNameSticker,x,y-40);
-    } else if(penStatus == "doubleCircle"){
-        ctxPaint.drawImage(charaDoubleCircle,x,y);
-    } else if(penStatus == "singleCircle"){
-        ctxPaint.drawImage(charaSingleCircle,x,y);
-    } else if(penStatus == "arrow"){
-        ctxPaint.drawImage(charaArrow,x-10,y-25);
-    } else if(penStatus == "hinanJunbi"){
-        ctxPaint.drawImage(charaHinanJunbi,x,y-25);
-    } else if(penStatus == "sagyouTimeSticker"){
-        ctxPaint.drawImage(charaSagyouTimeSticker,x,y);
-    } else if(penStatus == "hinanKaishiSticker"){
-    // console.log("pen is hinankaishi")
-        ctxPaint.drawImage(charaHinanKaishiSticker,x,y);
-    } else if(penStatus == "camera5"){
-        ctxPaint.drawImage(charaCamera5,x+25,y+25);
-    } else if(penStatus == "eraser"){
-        ctxPaint.clearRect(x,y,eraserWidth,eraserHeight);
-    }
-})
-// canvasPaint.addEventListener("mousedown",(event)=>{
-//     isDrag = true;
-//     x = event.offsetX * canvasFactor;
-//     y = event.offsetY * canvasFactor;
-//     // console.log(x,y)
-// });
 canvasPaint.addEventListener("mouseup",()=>{
     isDrag = false;
     x = undefined;
@@ -377,6 +337,8 @@ canvasPaint.addEventListener("mousemove",(event)=>{
 
 //線を描く関数
 function draw(x2,y2){
+    ereseW = 50; //消しゴムの大きさ
+    eraseH = 50;
     if(isDrag && penStatus == "pencil"){
         ctxPaint.beginPath();
         ctxPaint.arc(x2,y2,penSize*canvasFactor,0,Math.PI * 2);
@@ -384,7 +346,7 @@ function draw(x2,y2){
         ctxPaint.fill();
         drawLine(x,y,x2,y2);
     }else if(isDrag && penStatus == "eraser"){
-        ctxPaint.clearRect(x,y,20,20);
+        ctxPaint.clearRect(x-eraseW/2,y-eraseH/2,eraseW,eraseH);
     }
     x = x2;
     y = y2;
