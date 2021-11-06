@@ -171,7 +171,7 @@ note3Button.addEventListener("click",()=>{
     penStatus = "note3";
 })
 const note4Button = document.getElementById("note4Button");
-note3Button.addEventListener("click",()=>{
+note4Button.addEventListener("click",()=>{
     penStatus = "note4";
 })
 const eraserButton = document.getElementById("eraserButton");
