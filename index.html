@@ -200,12 +200,11 @@
             </div>
         </div>
 
-        <!-- コメントを書くスペース -->
-        <div class="comment">
-
-             <!-- 吹き出しの注釈を記入するスペース -->
-             <div class="fukidashi">
-                <div class="fukidashi-row">
+        <!-- 下枠のスペース -->
+        <div class="low-frame">
+            <!-- 吹き出しの注釈を記入するスペース -->
+            <div class="fukidashi">
+                <div class="fukidashi-col">
                     <div class="fukidashi-title">
                         <img src="image/note1.png">
                     </div>
@@ -213,7 +212,7 @@
                         <textarea class="textFukidashi" name="" id="fukiashi1"></textarea>
                     </div>
                 </div>
-                <div class="fukidashi-row">
+                <div class="fukidashi-col">
                     <div class="fukidashi-title">
                         <img src="image/note2.png">
                     </div>
@@ -221,7 +220,7 @@
                         <textarea class="textFukidashi" name="" id="fukidashi2"></textarea>
                     </div>
                 </div>
-                <div class="fukidashi-row">
+                <div class="fukidashi-col">
                     <div class="fukidashi-title">
                         <img src="image/note3.png">
                     </div>
@@ -229,7 +228,7 @@
                         <textarea class="textFukidashi" name="" id="fukidashi3" ></textarea>
                     </div>
                 </div>
-                <div class="fukidashi-row">
+                <div class="fukidashi-col">
                     <div class="fukidashi-title">
                         <img src="image/note4.png">
                     </div>
@@ -238,24 +237,22 @@
                     </div>
                 </div>
             </div>
-
-
-
-            <div class="comment-col">
-                <div class="comment-title" id="comment-title1">
-                    <p>避難路を考えた理由</p>
+            <!-- コメントを書くスペース -->
+            <div class="comment">
+                <div class="comment-col">
+                    <div class="comment-title" id="comment-title1">
+                       避難路を考えた理由
+                    </div>
+                    <textarea class="textComment" name="" id="comment1"></textarea>
                 </div>
-                <textarea class="textComment" name="" id="comment1"></textarea>
+                <div class="comment-col">
+                    <div class="comment-title" id="comment-title2">
+                        自分の家の周りの様子
+                    </div>
+                    <textarea class="textComment" name="" id="comment2"></textarea>
+                </div>          
             </div>
-            <div class="comment-col">
-                <div class="comment-title" id="comment-title2">
-                    <p>自分の家の周りの様子</p>
-                </div>
-                <textarea class="textComment" name="" id="comment2"></textarea>
-            </div>
-            
         </div>
-
 
         <!-- javascriptファイルの読み込み -->
         <script src="script.js"></script>

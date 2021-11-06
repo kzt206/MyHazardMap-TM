@@ -139,31 +139,6 @@ input[type='file']{
     display: none !important; /* 非表示設定 */
 }
 
-.fukidashi{
-    width:200px;
-    /* border: dashed 1px blue; */
-}
-
-.fukidashi-row{
-    height:25%;
-}
-
-.fukidashi-title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* border:dashed 1px blue; */
-}
-
-.textFukidashi{
-    resize:none; /* 伸縮不可 */
-    width:100%; 
-    height:12em;
-    box-sizing:border-box;
-    -moz-box-sizing:border-box; /* Firefox */
-    -webkit-box-sizing:border-box; /* Chrome, Safari */
-}
 
 .photos{
     width:200px;
@@ -189,9 +164,45 @@ input[type='file']{
     height:75%;
 }
 
-.comment{
+
+.low-frame{
     display: flex;
     width:var(--display-width);
+}
+
+.fukidashi{
+    width: 50%;
+    display: flex;
+    /* border: dashed 1px blue; */
+}
+
+.fukidashi-col{
+    /* display: flex !important; */
+    width:25%;
+}
+
+.fukidashi-title{
+    height:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* border:dashed 1px blue; */
+}
+
+.textFukidashi{
+    resize:none; /* 伸縮不可 */
+    width:100%; 
+    height:10em;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Chrome, Safari */
+}
+
+.comment{
+    display: flex;
+    width:50%;
+    /* height:100px; */
     /* border: dashed 1px red; */
 }
 
@@ -199,13 +210,8 @@ input[type='file']{
     width:50%;
 }
 
-.textComment{
-    resize:none; /* 伸縮不可 */
-    width:100%; 
-    height:5em;
-    box-sizing:border-box;
-    -moz-box-sizing:border-box; /* Firefox */
-    -webkit-box-sizing:border-box; /* Chrome, Safari */
+.comment-title{
+    height:30px;
 }
 
 #comment-title1{
@@ -214,4 +220,13 @@ input[type='file']{
 
 #comment-title2{
     background-color: rgb(217, 250, 202);
+}
+
+.textComment{
+    resize:none; /* 伸縮不可 */
+    width:100%; 
+    height:10em;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Chrome, Safari */
 }
