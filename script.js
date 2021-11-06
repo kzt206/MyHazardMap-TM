@@ -142,6 +142,22 @@ evacuationButton.addEventListener("click",()=>{
 // penButton.addEventListener("click",()=>{
 //     penStatus = "pencil";
 // })
+const camera1Button = document.getElementById("camera1Button");
+camera1Button.addEventListener("click",()=>{
+    penStatus = "camera1";
+})
+const camera2Button = document.getElementById("camera2Button");
+camera2Button.addEventListener("click",()=>{
+    penStatus = "camera2";
+})
+const camera3Button = document.getElementById("camera3Button");
+camera3Button.addEventListener("click",()=>{
+    penStatus = "camera3";
+})
+const camera4Button = document.getElementById("camera4Button");
+camera4Button.addEventListener("click",()=>{
+    penStatus = "camera4";
+})
 const note1Button = document.getElementById("note1Button");
 note1Button.addEventListener("click",()=>{
     penStatus = "note1";
@@ -208,67 +224,55 @@ const removeAcitiveThickness =() => {
 
 
 
-// //canvasをクリックしたときのイベント設定
-// this.canvasPaint.addEventListener("mousedown",(e) => {
-//     let x = e.offsetX-25;
-//     let y = e.offsetY-25;
+// canvasをクリックしたときのイベント設定（アイコンを置く設定）
+this.canvasPaint.addEventListener("mousedown",(e) => {
+    dw = 100; //アイコンの大きさ
+    dh = 100;
+    let x = e.offsetX * canvasFactor-dw/2;
+    let y = e.offsetY * canvasFactor-dh/2;
 
-//     console.log("x:",x,"y:",y);
-//     //penStatusの状態に応じて挙動変更
-//       if(penStatus == "home") {
-//         ctxPaint.drawImage(charaHome,x,y);
-//     } 
+    console.log("アイコンの場所　x:",x,"y:",y);
 
-// if(penStatus == "school") {
-//     ctxPaint.drawImage(charaSchool,x,y);
-//   } 
     
-//   if(penStatus == "evacuation") {
-//     ctxPaint.drawImage(charaEvacuation,x,y);
-//   } 
-//   if(penStatus == "camera1") {
-//     ctxPaint.drawImage(charaCamera1,x,y);
-//   }　
-//   if(penStatus == "camera2") {
-//     ctxPaint.drawImage(charaCamera2,x,y);
-//   }
-//   if(penStatus == "camera3") {
-//     ctxPaint.drawImage(charaCamera3,x,y);
-//   }
-//   if(penStatus == "camera4") {
-//     ctxPaint.drawImage(charaCamera4,x,y);
-//   }
-//   if(penStatus == "camera5") {
-//     ctxPaint.drawImage(charaCamera5,x,y);
-//   } 
-//   if(penStatus == "note1") {
-//     ctxPaint.drawImage(charaNote1,x+18,y-2);
-//   }
-//   if(penStatus == "note2") {
-//     ctxPaint.drawImage(charaNote2,x+18,y-2);
-//   }
-//   if(penStatus == "note3") {
-//     ctxPaint.drawImage(charaNote3,x+18,y-2);
-//   }
-//   if(penStatus == "note4") {
-//     ctxPaint.drawImage(charaNote4,x+18,y-2);
-//   }
-//   if(penStatus == "note5") {
-//     ctxPaint.drawImage(charaNote5,x+18,y-2);
-//   }
-//   if(penStatus == "note6") {
-//     ctxPaint.drawImage(charaNote6,x+18,y-2);
-//   }
-//   if(penStatus == "note7") {
-//     ctxPaint.drawImage(charaNote7,x+18,y-2);
-//   }
-//   if(penStatus == "note8") {
-//     ctxPaint.drawImage(charaNote8,x+18,y-2);
-//   }
-//   if(penStatus == "note9") {
-//     ctxPaint.drawImage(charaNote9,x+18,y-2);
-//   }
-// })
+    //penStatusの状態に応じて挙動変更(アイコンの設置)
+    switch(penStatus) {
+        case "home":
+            ctxPaint.drawImage(charaHome,x,y,dw,dh); //drawImage(image, dx, dy, dw, dh)
+            break;
+        case "school":
+            ctxPaint.drawImage(charaSchool,x,y,dw,dh);
+            break;
+        case "evacuation":
+            ctxPaint.drawImage(charaEvacuation,x,y,dw,dh);
+            break;
+        case "camera1":
+            ctxPaint.drawImage(charaCamera1,x,y,dw,dh);
+            break;
+        case "camera2":
+            ctxPaint.drawImage(charaCamera2,x,y,dw,dh);
+            break;
+        case "camera3":
+            ctxPaint.drawImage(charaCamera3,x,y,dw,dh);
+            break;
+        case "camera4":
+            ctxPaint.drawImage(charaCamera4,x,y,dw,dh);
+            break;
+        case "note1":
+            ctxPaint.drawImage(charaNote1,x,y,dw,dh);
+            break;
+        case "note2":
+            ctxPaint.drawImage(charaNote2,x,y,dw,dh);
+            break;
+        case "note3":
+            ctxPaint.drawImage(charaNote3,x,y,dw,dh);
+            break;
+        case "note4":
+            ctxPaint.drawImage(charaNote4,x,y,dw,dh);
+            break;
+        default:
+            penStatus = "pencil"
+    }
+})
 
 //ペンによる経路の描画
 const penButton = document.getElementById("penButton");
