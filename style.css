@@ -165,6 +165,8 @@ input[type='file']{
 }
 
 
+/* 下枠の設定 */
+
 .low-frame{
     display: flex;
     width:var(--display-width);
