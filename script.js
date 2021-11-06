@@ -10,7 +10,9 @@ const ctxPaint = canvasPaint.getContext("2d");
 // canvasMap.width = 2000;
 // canvasMap.height = 1000;
 
+//キャンバスサイズの設定と拡大率
 canvasFactor = 3;
+//画面上の大きさ×拡大率
 original_width = 740*canvasFactor;  //style="width:750px; height:500px"
 original_height = 500*canvasFactor; 
 
@@ -59,7 +61,7 @@ loadMapFile.addEventListener("change",function(evt){
 
 },false);
 
-//写真画像の読み込みイベントの設定
+//写真画像の読み込みイベントの設定（配列を利用）
 loadPhotoListName = ["selectPhoto1","selectPhoto2","selectPhoto3","selectPhoto4"];
 loadPhotoFileList = [];
 loadPhotoListName.forEach(function(value,index){
@@ -120,7 +122,9 @@ const charaNote9 = new Image();
 charaNote9.src = "image/note9.png"
 
 //スタンプを選択
+//デフォルトは「ペン」になっている
 let penStatus = "pencil";
+
 const homeButton = document.getElementById("homeButton");
 homeButton.addEventListener("click",()=>{
     penStatus = "home";
@@ -150,6 +154,10 @@ const note3Button = document.getElementById("note3Button");
 note3Button.addEventListener("click",()=>{
     penStatus = "note3";
 })
+const note4Button = document.getElementById("note4Button");
+note3Button.addEventListener("click",()=>{
+    penStatus = "note4";
+})
 // 選択解除ボタン
 // const freeButton = document.getElementById("freeButton");
 // freeButton.addEventListener("click",()=>{
@@ -158,7 +166,7 @@ note3Button.addEventListener("click",()=>{
 
 
 
-// 道具アイコンの選択
+// 道具アイコンの選択されると発生するイベント
 const tools = document.querySelectorAll(".tool");
 const selectButton = (elem) => {
     removeAcitiveButton();
@@ -172,29 +180,26 @@ const removeAcitiveButton =() => {
     });
 }
 
-// 色アイコンの選択
+// 色アイコンの選択されると発生するイベント
 const toolColors = document.querySelectorAll(".toolColor");
 const selectColor = (elem) => {
     removeAcitiveColor();
     ctxPaint.fillStyle = elem.getAttribute("data-color");
     elem.classList.add("activeColor");
 }
-
 const removeAcitiveColor =() => {
     toolColors.forEach((toolColor)=>{
         toolColor.classList.remove("activeColor");
     });
 }
 
-// 太さアイコンの選択
-
+// 太さアイコンの選択されると発生するイベント
 const toolThicknesses = document.querySelectorAll(".toolThickness");
 const selectThickness = (elem) => {
     removeAcitiveThickness();
     // ctxPaint.fillStyle = elem.getAttribute("data-color");
     elem.classList.add("activeThickness");
 }
-
 const removeAcitiveThickness =() => {
     toolThicknesses.forEach((toolThickness)=>{
         toolThickness.classList.remove("activeThickness");
