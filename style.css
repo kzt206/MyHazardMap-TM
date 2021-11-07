@@ -196,10 +196,12 @@ input[type='file']{
 .textFukidashi{
     resize:none; /* 伸縮不可 */
     width:100%; 
-    height:10em;
+    height:6em;
     box-sizing:border-box;
     -moz-box-sizing:border-box; /* Firefox */
     -webkit-box-sizing:border-box; /* Chrome, Safari */
+    font-size: 18pt;
+    overflow: hidden;
 }
 
 .comment{
@@ -228,8 +230,10 @@ input[type='file']{
 .textComment{
     resize:none; /* 伸縮不可 */
     width:100%; 
-    height:10em;
+    height:6em;
     box-sizing:border-box;
     -moz-box-sizing:border-box; /* Firefox */
     -webkit-box-sizing:border-box; /* Chrome, Safari */
+    font-size: 18pt;
+    overflow: hidden;
 }
