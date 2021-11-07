@@ -1,10 +1,10 @@
-//マップの設定
+//マップキャンバスの設定
 const canvasMap = document.querySelector("#canvasMap");
 const ctxMap = canvasMap.getContext("2d");
 // canvasMap.width = 2000;
 // canvasMap.height = 1000;
 
-//キャンバスの設定
+//ペイントキャンバスの設定
 const canvasPaint = document.querySelector("#canvasPaint");
 const ctxPaint = canvasPaint.getContext("2d");
 // canvasMap.width = 2000;
@@ -40,6 +40,13 @@ canvasPhotoListName.forEach(function(value,index){
     canvasPhotoList[index].style.width = photo_original_width/canvasFactor + "px";
     canvasPhotoList[index].style.height = photo_original_height/canvasFactor + "px";
 });
+
+//結合キャンバス　の設定
+const canvasContact = document.querySelector("#canvasContact");
+const ctxContact = canvasContact.getContext("2d");
+canvasContact.width = original_width + photo_original_width;
+canvasContact.height = original_height + photo_original_height;
+
 
 //マップ画像の読み込みイベントの設定
 const loadMapFile = document.getElementById("loadMapFile");
@@ -364,3 +371,56 @@ function drawLine(x1,y1,x2,y2){
     ctxPaint.stroke();
 }
 
+
+
+//downloadボタンの実装
+const downloadButton = document.getElementById("download-button");
+downloadButton.addEventListener("click",(e) => {
+
+    console.log("contactButton is clicked.");
+
+    // contactCtx2(saveImage,ctxSheet,ctxPaint);
+
+    ctxContact.clearRect(0,0,canvasContact.width,canvasContact.height);
+
+    let image1 = createImage(ctxMap);
+    image1.onload = function(){
+        ctxContact.drawImage(image1,0,0,original_width,original_height);
+    }
+
+    let image2 = createImage(ctxPaint);
+    image2.onload = function(){
+        ctxContact.drawImage(image2,0,0,original_width,original_height);
+    }
+
+    ctxPhotoList.forEach(function(value,index){
+        console.log(index);
+        let imagePhoto = createImage(ctxPhotoList[index]);
+        imagePhoto.onload = function(){
+            ctxContact.drawImage(imagePhoto,original_width,photo_original_height*index,photo_original_width,photo_original_height)
+        }
+    });
+    // let imagePhoto1 = createImage(ctxPhotoList[0]);
+    // imagePhoto1.onload = function(){
+    //     ctxContact.drawImage(imagePhoto1,original_width,original_height*0,photo_original_width,photo_original_height);
+    // }
+
+
+    // contactCtx(ctxSheet,ctxPaint);
+
+    // 500ms 待ってから保存
+    setTimeout(function(){
+        console.log("save function start")
+        let link = document.createElement("a");
+        link.href = canvasContact.toDataURL("image/png");
+        link.download = "testMyHazardMap.png";
+        link.click();    
+    },500)
+
+}); 
+
+let createImage= function(context){
+    var image= new Image
+    image.src= context.canvas.toDataURL()
+    return image
+}
