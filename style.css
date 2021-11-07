@@ -35,7 +35,7 @@
 .workspace{
     display: flex;
     width:var(--display-width);
-    height:700px;
+    height:720px;
     /* border: dashed 1px red; */
 }
 

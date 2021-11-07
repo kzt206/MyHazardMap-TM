@@ -14,7 +14,7 @@ const ctxPaint = canvasPaint.getContext("2d");
 canvasFactor = 3;
 //画面上の大きさ×拡大率
 original_width = 950*canvasFactor;  //style="width:750px; height:500px"
-original_height = 700*canvasFactor; 
+original_height = 720*canvasFactor; 
 
 canvasMap.width = original_width;
 canvasMap.height = original_height;
@@ -29,7 +29,8 @@ canvasPaint.style.height = original_height/canvasFactor + "px";
 canvasPhotoListName = ["canvasPhoto1","canvasPhoto2","canvasPhoto3","canvasPhoto4"];
 canvasFactor = 3;
 photo_original_width = 200*canvasFactor;  //style="width:750px; height:500px"
-photo_original_height = 130*canvasFactor; 
+photo_original_height = 130*canvasFactor;
+photo_title_height = 50*canvasFactor;  
 canvasPhotoList = []
 ctxPhotoList = []
 canvasPhotoListName.forEach(function(value,index){
@@ -127,6 +128,13 @@ const charaNote8 = new Image();
 charaNote8.src = "image/note8.png"　　　　　　　　　　　　
 const charaNote9 = new Image();
 charaNote9.src = "image/note9.png"
+
+charaCameraFileList = ["image/camera1.png","image/camera2.png","image/camera3.png","image/camera4.png"]
+charaCamera = []
+charaCameraFileList.forEach(function(value,index){
+    charaCamera.push(new Image());
+    charaCamera[index].src = charaCameraFileList[index];
+});
 
 //スタンプを選択
 //デフォルトは「ペン」になっている
@@ -392,13 +400,27 @@ downloadButton.addEventListener("click",(e) => {
     image2.onload = function(){
         ctxContact.drawImage(image2,0,0,original_width,original_height);
     }
-
+    
+    charaCamera.forEach(function(value, index){
+        ctxContact.drawImage(charaCamera[index],original_width+photo_original_width/2,(photo_original_height+photo_title_height)*index,30*canvasFactor,30*canvasFactor);
+    });
+    
     ctxPhotoList.forEach(function(value,index){
         console.log(index);
         let imagePhoto = createImage(ctxPhotoList[index]);
+        //写真タイトル
+        // ctxContact.textBaseline = 'top';
+        // ctxContact.textAlign = 'left';
+        // ctxContact.font = 'bold 50px serif';
+        // ctxContact.fillStyle = 'blue';
+        // title = "写真" + (index+1);
+        // ctxContact.fillText(title,original_width,(photo_original_height+photo_title_height)*index)
+
+        //写真貼り付け
         imagePhoto.onload = function(){
-            ctxContact.drawImage(imagePhoto,original_width,photo_original_height*index,photo_original_width,photo_original_height)
+            ctxContact.drawImage(imagePhoto,original_width,(photo_original_height+photo_title_height)*index+photo_title_height,photo_original_width,photo_original_height)
         }
+
     });
     // let imagePhoto1 = createImage(ctxPhotoList[0]);
     // imagePhoto1.onload = function(){
