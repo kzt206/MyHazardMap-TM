@@ -80,7 +80,7 @@
                      </div>
                 </div>
                 <!-- クリアボタン作成 -->
-                <div class="tool-box-row">
+                <div class="tool-box-row" id="tool-last">
                     <!-- 消しゴムボタン作成 -->
                     <div class="tool" onclick="selectButton(this)">
                         <a id="eraserButton" class="iconButton"><img src="image/eraser.png" ></a> 
@@ -90,7 +90,7 @@
                         <a id="alleraseButton" class="iconButton" onclick="confirmFunction()"><img src="image/all_erase.png"></a> 
                     </div>
                 </div>
-                <div class="tool-box-row">
+                <div class="tool-box-row" id="tool-color">
                     <div class="toolColor activeColor" data-color="blue" onclick="selectColor(this)">
                         <a id="blueButton" class="toolButton">通学路<br>青</a>
                      </div>
@@ -98,7 +98,7 @@
                         <a id="greenButton" class="toolButton">避難路<br>緑</a>
                      </div>
                 </div>
-                <div class="tool-box-row">
+                <div class="tool-box-row" id="tool-thickness">
                     <div class="toolThickness activeThickness" onclick="selectThickness(this)">
                         <a id="thickButton" class="toolButton">太</a>
                      </div>

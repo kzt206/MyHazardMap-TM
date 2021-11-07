@@ -9,6 +9,7 @@
     text-align: center;
     height:30px;
     width:calc(var(--display-width));
+    margin-bottom: 5px;
     /* border: dashed 1px red; */
 }
 
@@ -104,33 +105,46 @@ input[type='file']{
     border:solid 4px white;
     width:50%;
 }
+#tool-last{
+    border-bottom: solid 1px gray;
+    margin-bottom: 3px;
+}
+#tool-color{
+    border-bottom: solid 1px gray;
+    margin-bottom: 3px;
+}
 
 .tool:hover{
+    /* background-color: #000; */
     border:solid 4px yellow;
+    border-radius: 30%;
 }
 
 .toolColor:hover{
     background-color: rgb(209, 209, 209);
     border:solid 4px white;
-    border-radius: 40%;
+    border-radius: 30%;
 }
 
 .toolThickness:hover{
     background-color: rgb(209, 209, 209);
     border:solid 4px white;
-    border-radius: 40%;
+    border-radius: 30%;
 
 }
 .activeTool{
     border:solid 4px red;
+    border-radius: 30%;
     /* transform:scale(1.5); */
 }
 .activeColor{
     border:solid 4px pink;
+    border-radius: 30%;
     /* transform:scale(1.5); */
 }
 .activeThickness{
     border:solid 4px orange;
+    border-radius: 30%;
     /* transform:scale(1.5); */
 }
 .map{
@@ -138,6 +152,7 @@ input[type='file']{
     height: 700px;
     position: relative;
     background-color: rgba(212, 212, 212, 0.801);
+    margin-left: 5px;
     /* border: dashed 1px blue; */
 }
 
@@ -173,11 +188,14 @@ input[type='file']{
 
 .photos-title{
     height:25%;
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-color: rgb(202, 244, 250);
+    border-radius: 10px;
     /* border:dashed 1px blue; */
 }
 
