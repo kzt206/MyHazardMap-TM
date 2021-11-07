@@ -12,17 +12,19 @@
     /* border: dashed 1px red; */
 }
 
-#title-label{  
+#title-label{
+    width: 80%;
     /* background-color:blue; */
 }
 
 #download-button{
-    margin-left: 300px;
+    width: 20%;
+    /* margin-left: 300px; */
     text-align: center;
     background-color: #00b7ff;
     border-bottom: 5px solid #024f97;
     border-radius: 10px;
-    width:200px;
+    /* width:200px; */
 
 }
 #download-button:hover{
@@ -63,7 +65,7 @@
 #map-load-button:hover{
     /* margin-top: 3px; */
     color: #000;
-    background: hsl(73, 100%, 50%);
+    background: #fffa94;
     border-bottom: 5px solid #ccc100;
 }
 
@@ -141,7 +143,7 @@ input[type='file']{
 
 
 .photos{
-    width:200px;
+    width:200px;;
     /* border: dashed 1px blue; */
 }
 
@@ -160,7 +162,7 @@ input[type='file']{
     /* border:dashed 1px blue; */
 }
 
-.photo-canvas{
+.photos-canvas{
     height:75%;
 }
 
@@ -168,51 +170,59 @@ input[type='file']{
 /* 下枠の設定 */
 
 .low-frame{
+    /* margin: 0px; */
     display: flex;
     width:var(--display-width);
     margin-top:10px;
+    margin-right: 0px;
 }
 
 .fukidashi{
-    width: 50%;
-    display: flex;
+    width: 40%;
+    display: inline;
     /* border: dashed 1px blue; */
 }
 
-.fukidashi-col{
-    /* display: flex !important; */
-    width:25%;
+.fukidashi-row{
+    display: flex;
+    width:100%;
 }
 
 .fukidashi-title{
     height:30px;
-    display: flex;
+    width: 10%;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     text-align: center;
     /* border:dashed 1px blue; */
 }
 
+.fudashi-comment{
+    width: 90%;
+}
+
 .textFukidashi{
     resize:none; /* 伸縮不可 */
-    width:100%; 
-    height:6em;
+    width:450px;
+    height:1.3em;
     box-sizing:border-box;
     -moz-box-sizing:border-box; /* Firefox */
     -webkit-box-sizing:border-box; /* Chrome, Safari */
-    font-size: 18pt;
+    font-size: 12pt;
     overflow: hidden;
+    /* border: dashed 1px blue; */
 }
 
 .comment{
-    display: flex;
-    width:50%;
+    /* display: flex; */
+    width:60%;
     /* height:100px; */
     /* border: dashed 1px red; */
 }
 
-.comment-col{
-    width:50%;
+.comment-row{
+    width:100%;
 }
 
 .comment-title{
@@ -230,10 +240,10 @@ input[type='file']{
 .textComment{
     resize:none; /* 伸縮不可 */
     width:100%; 
-    height:6em;
+    height:1.3em;
     box-sizing:border-box;
     -moz-box-sizing:border-box; /* Firefox */
     -webkit-box-sizing:border-box; /* Chrome, Safari */
-    font-size: 18pt;
+    font-size: 12pt;
     overflow: hidden;
 }
