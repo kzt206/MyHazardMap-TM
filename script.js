@@ -449,18 +449,32 @@ downloadButton.addEventListener("click",(e) => {
         let lineHeight = 1.1618 ;	// 行の高さ (フォントサイズに対する倍率)
         // let x = 50 ;	// 水平位置
         // let y = 50 ;	// 垂直位置
-
         ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
-        // 1行ずつ描画
-        for( var lines=text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
-	        var line = lines[i] ;
-	        var addY = fontSize ;
 
+        let lineNum = Math.trunc(text.length/6) +1;
+        // console.log("lineNum : " + lineNum);
+        // console.log(text.substr(0,10))
+        for( i=0;i<lineNum;i++){
+            let line = text.substr(i*5,5)
+            var addY = fontSize ;
 	        // 2行目以降の水平位置は行数とlineHeightを考慮する
 	        if ( i ) addY += fontSize * lineHeight * i ;
-
-	        ctxContact.fillText( line, fukidashi_width*index + 0, original_height + addY + fukidashi_title_height);
+            ctxContact.fillText( line, fukidashi_width*index + fukidashi_width/2, original_height + addY + fukidashi_title_height*1.2);
         }
+
+
+
+
+        // 1行ずつ描画
+        // for( var lines=text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
+	    //     var line = lines[i] ;
+	    //     var addY = fontSize ;
+
+	    //     // 2行目以降の水平位置は行数とlineHeightを考慮する
+	    //     if ( i ) addY += fontSize * lineHeight * i ;
+
+	    //     ctxContact.fillText( line, fukidashi_width*index + 0, original_height + addY + fukidashi_title_height);
+        // }
         // ctxContact.fillText(text,fukidashi_width*index,original_height);
         
     });    
