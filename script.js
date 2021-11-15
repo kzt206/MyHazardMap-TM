@@ -136,6 +136,9 @@ charaCameraFileList.forEach(function(value,index){
     charaCamera[index].src = charaCameraFileList[index];
 });
 
+
+
+//吹き出しコメントの取得
 charaFukidashiFileList = ["image/note1.png","image/note2.png","image/note3.png","image/note4.png"]
 charaFukidashi = []
 charaFukidashiFileList.forEach(function(value,index){
@@ -409,16 +412,61 @@ downloadButton.addEventListener("click",(e) => {
     //マップの結合
     let image1 = createImage(ctxMap);
     image1.onload = function(){
-        ctxContact.drawImage(image1,0,0,original_width,original_height);
+        ctxContact.drawImage(image1,4,4,original_width-14,original_height-10);  //original_width = 950*canvasFactor;  //style="width:750px; height:500px"
+                                                                          //original_height = 670*canvasFactor;  //  *1.414
     }
+    //マップの枠
+    // パスをリセット
+    ctxContact.beginPath () ;
+    // 線を引くスタート地点に移動
+    ctxContact.moveTo( 2, 2 ) ;
+    // スタート地点から指定位置まで線を引く
+    ctxContact.lineTo(original_width-2,2)
+    ctxContact.lineTo(original_width-2,original_height-2)
+    ctxContact.lineTo(2,original_height-2)
+    ctxContact.lineTo(2,2)
+    // 線の色
+    ctxContact.strokeStyle = "gray" ;
+    // 線の太さ
+    ctxContact.lineWidth = 4 ;
+    // 線を描画する
+    ctxContact.stroke() ;
+
     //ペイント内容の結合
     let image2 = createImage(ctxPaint);
     image2.onload = function(){
         ctxContact.drawImage(image2,0,0,original_width,original_height);
     }
+
+    //名前の書き込み
+    let nameText = document.getElementById("name");
+    // console.log(nameText.value);
+    let fontSize = 50;
+    // let lineHeight = 1.1618 ;	// 行の高さ (フォントサイズに対する倍率)
+        // let x = 50 ;	// 水平位置
+        // let y = 50 ;	// 垂直位置
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    ctxContact.fillText( "名前："+nameText.value, original_width + 30, 50);
+
     //カメラキャラクターの貼り付け
     charaCamera.forEach(function(value, index){
-        ctxContact.drawImage(charaCamera[index],original_width+photo_original_width/2,(photo_original_height+photo_title_height)*index,30*canvasFactor,30*canvasFactor);
+        ctxContact.drawImage(charaCamera[index],original_width+photo_original_width/20,(photo_original_height+photo_title_height)*index+100,30*canvasFactor,30*canvasFactor);
+    });
+
+    //カメラのタイトルの貼り付け
+    //タイトルの取得
+    titlePhotoIDList = ["photo1title","photo2title","photo3title","photo4title"];
+    titlePhotoList = [];
+    titlePhotoIDList.forEach(function(value,index){
+        // console.log(value);
+        titlePhotoList.push(document.getElementById(value).value);
+        // console.log(document.getElementById(value).value);
+    });
+    fontSize = 40;
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    titlePhotoList.forEach(function(value,index){
+        // console.log(titlePhotoList[index])
+        ctxContact.fillText(value,original_width+photo_original_width/4,(photo_original_height+photo_title_height)*index+170);
     });
     //カメラ画像の結合
     ctxPhotoList.forEach(function(value,index){
@@ -427,7 +475,7 @@ downloadButton.addEventListener("click",(e) => {
         
         //写真貼り付け
         imagePhoto.onload = function(){
-            ctxContact.drawImage(imagePhoto,original_width,(photo_original_height+photo_title_height)*index+photo_title_height,photo_original_width,photo_original_height);
+            ctxContact.drawImage(imagePhoto,original_width,(photo_original_height+photo_title_height)*index+photo_title_height+100,photo_original_width,photo_original_height);
         }
 
     });
@@ -445,8 +493,8 @@ downloadButton.addEventListener("click",(e) => {
         // console.log(index);
         // console.log(fukidashiAreaList[index].value);
         let text = fukidashiAreaList[index].value;
-        let fontSize = 50;
-        let lineHeight = 1.1618 ;	// 行の高さ (フォントサイズに対する倍率)
+        fontSize = 50;
+        lineHeight = 1.1618 ;	// 行の高さ (フォントサイズに対する倍率)
         // let x = 50 ;	// 水平位置
         // let y = 50 ;	// 垂直位置
         ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
