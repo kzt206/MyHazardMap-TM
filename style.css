@@ -111,9 +111,13 @@ input[type='file']{
 }
 
 .toolButton{
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* vertical-align: middle; */
+    width:100%;
+    height:100%;
 }
 
 #tool-last{
@@ -189,7 +193,7 @@ input[type='file']{
     width: 950px;
     height: 670px;
     position: relative;
-    background-color: rgba(212, 212, 212, 0.801);
+    /* background-color: rgba(212, 212, 212, 0.801); */
     margin-left:5px;
     margin-right:5px;
     /* border: dashed 1px blue; */
@@ -197,6 +201,7 @@ input[type='file']{
 
 #canvasMap{
     position:absolute;
+     background-color: rgba(212, 212, 212, 0.801);
     /* top:100px; */
     /* left:200px; */
     /* margin-left: 200; */
