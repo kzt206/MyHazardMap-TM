@@ -190,13 +190,17 @@ input[type='file']{
 }
 
 .map{
-    width: 950px;
+    width:956px;
     height: 670px;
     position: relative;
     /* background-color: rgba(212, 212, 212, 0.801); */
     margin-left:5px;
-    margin-right:5px;
+    /* margin-right:30px; */
     /* border: dashed 1px blue; */
+}
+
+.canvasSpace{
+    width:956px;
 }
 
 #canvasMap{
@@ -206,11 +210,12 @@ input[type='file']{
     /* left:200px; */
     /* margin-left: 200; */
     border: solid 3px gray;
-    margin-right: 5px;
+    /* margin-right: 5px; */
 }
 
 #canvasPaint{
     position:absolute;
+    border: solid 3px gray;
     /* padding:100; */
     /* margin-left: 500; */
     /* border: solid 2px green; */
@@ -222,17 +227,21 @@ input[type='file']{
 
 
 .photos{
-    width:200px;;
+    width:200px;
+    height:100%;
+    /* margin-left: 30px; */
     /* border: dashed 1px blue; */
 }
 
 .photos-row{
     /* border:solid 1px black; */
+    /* padding-top: 5px; */
     height:25%;
 }
 
 .photos-title{
-    height:25%;
+    height:20%;
+    padding-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
