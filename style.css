@@ -41,7 +41,8 @@
 .workspace{
     display: flex;
     width:var(--display-width);
-    height:720px;
+    height: 670px;
+    /* height:720px; */
     /* border: dashed 1px red; */
 }
 
@@ -186,10 +187,11 @@ input[type='file']{
 
 .map{
     width: 950px;
-    height: 700px;
+    height: 670px;
     position: relative;
     background-color: rgba(212, 212, 212, 0.801);
-    margin-left: 5px;
+    margin-left:5px;
+    margin-right:5px;
     /* border: dashed 1px blue; */
 }
 
@@ -198,7 +200,8 @@ input[type='file']{
     /* top:100px; */
     /* left:200px; */
     /* margin-left: 200; */
-    /* border: solid 3px blue; */
+    border: solid 3px gray;
+    margin-right: 5px;
 }
 
 #canvasPaint{

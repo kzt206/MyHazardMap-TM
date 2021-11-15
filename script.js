@@ -14,7 +14,7 @@ const ctxPaint = canvasPaint.getContext("2d");
 canvasFactor = 3;
 //画面上の大きさ×拡大率
 original_width = 950*canvasFactor;  //style="width:750px; height:500px"
-original_height = 720*canvasFactor; 
+original_height = 670*canvasFactor;  //  *1.414 
 
 canvasMap.width = original_width;
 canvasMap.height = original_height;
