@@ -475,7 +475,7 @@ downloadButton.addEventListener("click",(e) => {
         
         //写真貼り付け
         imagePhoto.onload = function(){
-            ctxContact.drawImage(imagePhoto,original_width,(photo_original_height+photo_title_height)*index+photo_title_height+100,photo_original_width,photo_original_height);
+            ctxContact.drawImage(imagePhoto,original_width,(photo_original_height+photo_title_height)*index+photo_title_height+50,photo_original_width,photo_original_height);
         }
 
     });
@@ -510,23 +510,47 @@ downloadButton.addEventListener("click",(e) => {
             ctxContact.fillText( line, fukidashi_width*index + fukidashi_width/2, original_height + addY + fukidashi_title_height*1.2);
         }
 
-
-
-
-        // 1行ずつ描画
-        // for( var lines=text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
-	    //     var line = lines[i] ;
-	    //     var addY = fontSize ;
-
-	    //     // 2行目以降の水平位置は行数とlineHeightを考慮する
-	    //     if ( i ) addY += fontSize * lineHeight * i ;
-
-	    //     ctxContact.fillText( line, fukidashi_width*index + 0, original_height + addY + fukidashi_title_height);
-        // }
-        // ctxContact.fillText(text,fukidashi_width*index,original_height);
-        
     });    
  
+    // コメント１の結合
+    //タイトル部分
+    let comment1title = document.getElementById("comment-title1").textContent;
+    fontSize = 40;
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    ctxContact.fillText( comment1title, fukidashi_width*4 , original_height+100);
+    //コメント部分
+    let comment1Text = document.getElementById("comment1").value;
+    fontSize = 50;
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    lineCharas = 13;
+    let lineNum = Math.trunc(comment1Text.length/lineCharas) +1;
+    for( i=0;i<lineNum;i++){
+        let line = comment1Text.substr(i*lineCharas,lineCharas)
+        var addY = fontSize ;
+        // 2行目以降の水平位置は行数とlineHeightを考慮する
+        if ( i ) addY += fontSize * lineHeight * i ;
+        ctxContact.fillText( line, fukidashi_width*4 + fukidashi_width/2, original_height + addY + fukidashi_title_height*1.2);
+    }
+
+    // コメント２の結合
+    //タイトル部分
+    let comment2title = document.getElementById("comment-title2").textContent;
+    fontSize = 40;
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    ctxContact.fillText( comment2title, fukidashi_width*6 , original_height+100);
+    //コメント部分
+    let comment2Text = document.getElementById("comment2").value;
+    fontSize = 50;
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    // lineCharas = 15;
+    lineNum = Math.trunc(comment2Text.length/lineCharas) +1;
+    for( i=0;i<lineNum;i++){
+        let line = comment2Text.substr(i*lineCharas,lineCharas)
+        var addY = fontSize ;
+        // 2行目以降の水平位置は行数とlineHeightを考慮する
+        if ( i ) addY += fontSize * lineHeight * i ;
+        ctxContact.fillText( line, fukidashi_width*6 + fukidashi_width/2, original_height + addY + fukidashi_title_height*1.2);
+    }
 
     // 500ms 待ってから保存
     setTimeout(function(){
