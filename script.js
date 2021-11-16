@@ -365,7 +365,7 @@ canvasPaint.addEventListener("mousemove",(event)=>{
 //線を描く関数
 function draw(x2,y2){
     eraseW = 50; //消しゴムの大きさ
-    eraseH = 50;
+    eraseH = 50; //消しゴムの大きさ
     if(isDrag && penStatus == "pencil"){
         ctxPaint.beginPath();
         ctxPaint.arc(x2,y2,penSize*canvasFactor,0,Math.PI * 2);
