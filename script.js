@@ -493,7 +493,7 @@ downloadButton.addEventListener("click",(e) => {
         // console.log(index);
         // console.log(fukidashiAreaList[index].value);
         let text = fukidashiAreaList[index].value;
-        fontSize = 50;
+        fontSize = 40;
         lineHeight = 1.1618 ;	// 行の高さ (フォントサイズに対する倍率)
         // let x = 50 ;	// 水平位置
         // let y = 50 ;	// 垂直位置
@@ -515,12 +515,12 @@ downloadButton.addEventListener("click",(e) => {
     // コメント１の結合
     //タイトル部分
     let comment1title = document.getElementById("comment-title1").textContent;
-    fontSize = 40;
+    fontSize = 35;
     ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
     ctxContact.fillText( comment1title, fukidashi_width*4 , original_height+100);
     //コメント部分
     let comment1Text = document.getElementById("comment1").value;
-    fontSize = 50;
+    fontSize = 40;
     ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
     lineCharas = 13;
     let lineNum = Math.trunc(comment1Text.length/lineCharas) +1;
@@ -535,12 +535,12 @@ downloadButton.addEventListener("click",(e) => {
     // コメント２の結合
     //タイトル部分
     let comment2title = document.getElementById("comment-title2").textContent;
-    fontSize = 40;
+    fontSize = 35;
     ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
     ctxContact.fillText( comment2title, fukidashi_width*6 , original_height+100);
     //コメント部分
     let comment2Text = document.getElementById("comment2").value;
-    fontSize = 50;
+    fontSize = 40;
     ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
     // lineCharas = 15;
     lineNum = Math.trunc(comment2Text.length/lineCharas) +1;
